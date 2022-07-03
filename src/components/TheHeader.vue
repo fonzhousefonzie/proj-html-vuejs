@@ -10,9 +10,11 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="icons d-flex list-unstyled gap-4">
-                    <li><i class="fa fa-solid fa-cart-shopping"></i></li>
-                    <li><i class="fa-regular fa-circle-user me-3"></i></li>
+                <ul class="icons d-flex list-unstyled">
+                    <li class="cart"><i class="fa fa-solid fa-cart-shopping pe-3"></i>
+                        <div class="cart-items">{{cartItems}}</div>
+                    </li>
+                    <li><i class="fa-regular fa-circle-user pe-3"></i></li>
                 </ul>
                 <div class="search">
                     <input type="text" placeholder="Search...">
@@ -76,7 +78,8 @@ export default {
                         link3: 'link3'
                     }
                 }
-            }
+            },
+            cartItems: 0
         }
     }
 }
@@ -136,20 +139,38 @@ header {
 
                     &:hover {
                         background: var(--white);
-                        color: var(--blue);
                     }
                 }
             }
 
             &:hover {
                 color: var(--blue);
+
                 ul {
                     display: block;
+                    z-index: 10;
                 }
+            }
+        }
+
+        .icons .cart{
+            position: relative;
+            .cart-items{
+                position: absolute;
+                top: 10%;
+                right: 30%;
+                font-size: 0.5rem;
+                background: var(--orange);
+                color: var(--white);
+                font-weight: bold;
+                padding: 0 0.2rem;
+                border-radius: 0.5rem;
             }
         }
     }
 
-
+    li:hover {
+        color: var(--blue);
+    }
 }
 </style>
