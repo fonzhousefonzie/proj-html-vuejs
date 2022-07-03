@@ -1,6 +1,6 @@
 <template>
     <div class="section py-5">
-        <div class="container d-flex justify-content-around">
+        <div class="container d-flex justify-content-around py-3">
             <CounterCard v-for="card in counters" :key="card.text" 
                 :counter="card.number"
                 :title="card.text"

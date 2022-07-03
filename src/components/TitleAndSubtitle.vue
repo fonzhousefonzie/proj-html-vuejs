@@ -1,6 +1,6 @@
 <template>
-    <div class="py-5">
-        <h6 class="text-uppercase pb-2">{{subtitle + ' '}} <span>{{subtitleLastWord}}</span></h6>
+    <div class="py-4">
+        <h6 class="text-uppercase pb-2" :class="{'d-none' : noSub}">{{subtitle + ' '}} <span>{{subtitleLastWord}}</span></h6>
         <h1>{{title + ' '}}<span :class="{'text-uppercase' : textUp}">{{titleLastWord}}</span></h1>
         <h1 :class="{'d-none' : !displaySecondTitle}">{{secondTitle}}</h1>
     </div>
@@ -10,6 +10,7 @@
 
 export default {
     props:{
+        noSub: Boolean,
         subtitle: String,
         subtitleLastWord: String,
         title: String,

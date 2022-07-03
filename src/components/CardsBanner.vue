@@ -2,7 +2,7 @@
     <div class="section">
         <div class="container">
             <TitleAndSubtitle :title="'Build Your Dream'" :title-last-word="'Today'" :text-up="true" :subtitle="'start learning coding languages'"/>
-            <div class="cards-container d-flex">
+            <div class="cards-container d-flex py-5">
                 <SimpleCard v-for="card in cards" :key="card.title"
                     :img-url="require('../assets/img/' + card.img)"
                     :title="card.title"
@@ -54,6 +54,7 @@ export default {
 
 <style lang="scss" scoped>
     .section{
+        padding-top: 3rem;
         background: var(--main-bg-light);
     }
 </style>

@@ -1,6 +1,7 @@
 <template>
     <div class="section">
-        <JumboBanner class="scale-y" :img-right="image" :start-text="true"
+        <JumboBanner class="scale-y" :img-right="image" :start-text="true" :colLeft="50" :col-right="50"
+        :no-sub-start="true"
             :starth1="'Complete Your Dreams in JavaS Programming'"
             :start-p="`Learn any coding program in distance and for a reasonable fee. You don't have to struggle alone, you've got our assistance and help.`"
             :start-button="'Download free E-book'" :start-btn-icon="'fa fa-solid fa-download'" />
@@ -9,18 +10,14 @@
 
 <script>
 import JumboBanner from './JumboBanner.vue'
-import { state } from '@/state';
 
 export default {
-    components: { JumboBanner },
-    computed: {
-        image() {
-            const image = state.image1;
-
-            return image
+    data(){
+        return{
+            image: require('../assets/img/home-5-hero-image.png')
         }
-    }
-
+    },
+    components: { JumboBanner },
 }
 </script>
 

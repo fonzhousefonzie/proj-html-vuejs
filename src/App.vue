@@ -5,6 +5,10 @@
     <CardsBanner/>
     <SecondJumbo/>
     <CounterBanner/>
+    <CoursesContainer/>
+    <BannerOne/>
+    <BannerTwo/>
+    <EventsSection/>
     <TheFooter />
   </div>
 </template>
@@ -16,6 +20,10 @@ import CardsBanner from './components/CardsBanner.vue';
 import JumboSection from './components/JumboSection.vue';
 import SecondJumbo from './components/SecondJumbo.vue';
 import CounterBanner from './components/CounterBanner.vue';
+import CoursesContainer from './components/CoursesContainer.vue';
+import BannerOne from './components/BannerOne.vue';
+import BannerTwo from './components/BannerTwo.vue';
+import EventsSection from './components/EventsSection.vue';
 
 export default {
   name: 'App',
@@ -25,7 +33,11 @@ export default {
     CardsBanner,
     JumboSection,
     SecondJumbo,
-    CounterBanner
+    CounterBanner,
+    CoursesContainer,
+    BannerOne,
+    BannerTwo,
+    EventsSection
 }
 }
 </script>
@@ -73,6 +85,10 @@ h1{
   color: var(--main-color);
 }
 
+h5{
+  font-size: 1.4rem;
+}
+
 h6 {
   font-size: 1.1rem;
 }
@@ -87,17 +103,22 @@ button{
 .primary-btn{
   background: var(--jungle-green);
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   &:hover{
     background: var(--main-color);
   }
+}
+
+.primary-btn.small{
+  padding: 0.3rem 2.5rem;
+  font-size: 0.8rem;
 }
 
 .secondary-btn{
   padding: 0.7rem 4rem;
   background: none;
   color: var(--main-color-light);
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.9rem;
   &:hover{
     background: var(--main-bg);
@@ -112,7 +133,15 @@ input[type="text"] {
   border-radius: 0.3rem;
 }
 
+.col-40{
+  width: 40%;
+}
+
 .col-50 {
   width: 50%;
+}
+
+.col-60{
+  width: 60%;
 }
 </style>

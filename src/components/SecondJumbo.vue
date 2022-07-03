@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import { state } from '@/state';
 import TitleAndSubtitle from './TitleAndSubtitle.vue';
 
 export default {
@@ -42,7 +41,8 @@ export default {
                     title: "Track Study Progress & eliver Prompt Feedback",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt atque placeat recusandae assumenda, quasi odio et, libero nobis nostrum accusamus."
                 }
-            ]
+            ],
+            image: require('../assets/img/about-us-03-image-01.png')
         }
     },
     components: { TitleAndSubtitle },
@@ -52,12 +52,6 @@ export default {
                 this.dropdowns[i].show = false;
             }
             object.show = true;
-        }
-    },
-    computed: {
-        image() {
-            const image = state.image2;
-            return image
         }
     }
 }
@@ -78,6 +72,11 @@ export default {
         background-size: 60%, 55%;
         background-repeat: no-repeat;
     }
+
+    .dropdown-container{
+        padding-top: 1rem;
+    }
+
     .dropdown{
         background: var(--white);
         margin-bottom: 2rem;
