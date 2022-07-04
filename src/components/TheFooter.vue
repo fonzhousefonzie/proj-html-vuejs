@@ -1,5 +1,5 @@
 <template>
-    <footer class="py-3">
+    <footer class="pt-3 pb-4">
         <div class="container d-flex text-start py-5">
             <div class="address col-50">
                 <h6>Address</h6>
@@ -15,7 +15,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="links col-50 d-flex gap-5">
+            <div class="links col-50 d-flex">
                 <div class="explore">
                     <h6>Explore</h6>
                     <ul>
@@ -77,12 +77,19 @@ h6{
         color: var(--green);
     }
 
+    .links{
+        gap: 5rem;
+        padding-bottom: 2rem;
+    }
+
     .explore-2{
         padding-top: 1.9rem;
     }
 
     .copyright{
-        color: var(--green);
+        color: var(--jungle-green);
+        font-weight: 600;
+        font-size: 0.9rem;
         padding: 0.5rem;
     }
 </style>

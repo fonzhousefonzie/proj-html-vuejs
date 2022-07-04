@@ -3,21 +3,15 @@
         <div class="container pt-5">
             <TitleAndSubtitle :subtitle="'people are praising maxcoach'" :title="'What make they'"
                 :title-last-word="'love us?'" />
-            <div class="cards-container">
-                <TestimonialCard v-for="testimonial in testimonials" :key="testimonial.name"
-                    :img-url="testimonial.img"
-                    :text="testimonial.text"
-                    :testimonial-name="testimonial.name"
-                    :job="testimonial.job"
-                />
+            <div class="cards-container" id="cards">
+                <TestimonialCard v-for="testimonial in testimonials" :key="testimonial.name" :img-url="testimonial.img"
+                    :text="testimonial.text" :testimonial-name="testimonial.name" :job="testimonial.job" />
             </div>
-            <div class="dots-container py-3 d-flex justify-content-center">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+            <div class="dots-container pb-5 d-flex justify-content-center align-items-center">
+                <div v-for="(testimonial, i) in testimonials" :key="i" 
+                :id="'dot' + i" class="dot" :class="{'active' : i === active}"></div>
             </div>
-            <div class="call-to-action">
+            <div class="call-to-action mb-4">
                 <div class="circle"></div>
                 <h5>Start today for getting <span>Online Certification</span></h5>
                 <h2>You can be your own guiding star with our help!</h2>
@@ -58,8 +52,40 @@ export default {
                     name: "John Doe",
                     job: "Web Developer"
                 },
-            ]
+            ],
+            active: 0
         }
+    },
+    methods: {
+        swipe() {
+            const th = this;
+            setInterval(function () {
+                //cards
+                const cards = document.getElementById('cards');
+                cards.scrollBy({
+                    left: 10000,
+                    behavior: 'smooth'
+                });
+                setTimeout(function(){
+                const element = th.testimonials[0];
+                th.testimonials.splice(0, 1);
+                th.testimonials.splice(3, 0, element);
+                cards.scrollBy({
+                    left: -10000,
+                    behavior: 'instant'
+                })
+                }, 500)
+                //dots
+                if(th.active < th.testimonials.length - 1){
+                    th.active = th.active + 1
+                } else if(th.active === th.testimonials.length - 1){
+                    th.active = 0
+                }
+            }, 10000)
+        }
+    },
+    mounted() {
+        this.swipe()
     },
     components: { TitleAndSubtitle, TestimonialCard }
 }
@@ -78,11 +104,17 @@ export default {
             overflow-x: hidden;
         }
 
-        .dots-container{
-            .dot{
-                border: 4px solid var(--main-color);
+        .dots-container {
+            min-height: 100px;
+            .dot {
+                border: 4px solid var(--main-color-light);
                 border-radius: 50%;
                 margin: 0.7rem;
+                transition: 500ms ease;
+            }
+
+            .active {
+                border: 6px solid var(--main-color)
             }
         }
 

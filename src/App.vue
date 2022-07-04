@@ -1,16 +1,67 @@
 <template>
   <div id="app">
     <TheHeader />
-    <JumboSection/>
-    <CardsBanner/>
-    <SecondJumbo/>
-    <CounterBanner/>
-    <CoursesContainer/>
-    <BannerOne/>
-    <BannerTwo/>
-    <EventsSection/>
-    <TestimonialsSection/>
+    <JumboSection />
+    <CardsBanner />
+    <SecondJumbo />
+    <CounterBanner />
+    <CoursesContainer />
+    <BannerOne />
+    <BannerTwo />
+    <EventsSection />
+    <TestimonialsSection />
     <TheFooter />
+    <a href="#" class="primary-btn" id="upBtn"><i class="fa fa-solid fa-arrow-up"></i></a>
+    <div id="sideMenu">
+      <i class="fa-solid fa-ruler-combined">
+        <div class="side-div">
+          <ul class="list-unstyled">
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+          </ul>
+        </div>
+      </i>
+      <i class="fa-regular fa-life-ring">
+        <div class="side-div">
+          <ul class="list-unstyled">
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+          </ul>
+        </div>
+      </i>
+      <i class="fa-solid fa-book">
+        <div class="side-div">
+          <ul class="list-unstyled">
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+          </ul>
+        </div>
+      </i>
+      <i class="fa-solid fa-cart-shopping">
+        <div class="side-div">
+          <ul class="list-unstyled">
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+            <li>a side link</li>
+          </ul>
+        </div>
+      </i>
+    </div>
   </div>
 </template>
 
@@ -41,7 +92,7 @@ export default {
     BannerTwo,
     EventsSection,
     TestimonialsSection
-}
+  }
 }
 </script>
 
@@ -54,7 +105,6 @@ export default {
   --main-color: #513e5e;
   --main-color-rgb: 81, 62, 94;
   --main-color-light: rgba(81, 62, 94, 0.5);
-  --green: #22ad96;
   --white: #fefefe;
   --light-blue: #b6b8d1;
   --blue: #01afc8;
@@ -64,6 +114,8 @@ export default {
   --dark-green: #458d76;
   --orange: #f29518;
   --tortora: #a08778;
+  --piza: #fb9301;
+  --black: #0e0e0e;
 }
 
 #app {
@@ -82,14 +134,18 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+
+  &:hover {
+    color: var(--main-color-light);
+  }
 }
 
-h1{
+h1 {
   font-weight: 600;
   color: var(--main-color);
 }
 
-h5{
+h5 {
   font-size: 1.4rem;
 }
 
@@ -97,38 +153,57 @@ h6 {
   font-size: 1.1rem;
 }
 
-button{
+button {
   border: none;
   outline: none;
   padding: 0.7rem 2rem;
   border-radius: 0.3rem;
 }
 
-.primary-btn{
+#upBtn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 50%;
+  padding: 0 1.5rem;
+  aspect-ratio: 1 / 1;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.primary-btn {
   background: var(--jungle-green);
-  color: white;
+  color: var(--white);
   font-weight: 600;
-  &:hover{
+
+  &:hover {
     background: var(--main-color);
   }
 }
 
-.primary-btn.large{
+.primary-btn.large {
   padding: 0.7rem 3.5rem;
 }
 
-.primary-btn.small{
+.primary-btn.small {
   padding: 0.3rem 2.5rem;
   font-size: 0.8rem;
 }
 
-.secondary-btn{
+.secondary-btn {
   padding: 0.7rem 4rem;
   background: none;
   color: var(--main-color-light);
   font-weight: 600;
   font-size: 0.9rem;
-  &:hover{
+
+  &:hover {
     background: var(--main-bg);
     color: var(--jungle-green);
   }
@@ -141,7 +216,7 @@ input[type="text"] {
   border-radius: 0.3rem;
 }
 
-.col-40{
+.col-40 {
   width: 40%;
 }
 
@@ -149,7 +224,48 @@ input[type="text"] {
   width: 50%;
 }
 
-.col-60{
+.col-60 {
   width: 60%;
+}
+
+#sideMenu {
+  position: fixed;
+  right: 0px;
+  top: 180px;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 0.5rem 0 0 0.5rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+
+  i {
+    padding: 0.7rem;
+    display: flex;
+
+    &:hover {
+      color: var(--main-color-light);
+      .side-div{
+        display: block;
+      }
+    }
+
+    .side-div {
+      display: none;
+      left: 100%;
+      top: 0;
+      width: 150px;
+      li{
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-weight: normal;
+        color: var(--main-color);
+        text-transform: capitalize;
+        padding: 0.5rem 0;
+        &:hover{
+          color: var(--main-color-light);
+        }
+      }
+    }
+  }
 }
 </style>

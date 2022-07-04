@@ -112,8 +112,10 @@ header {
             position: relative;
 
             i {
+                cursor: pointer;
+                padding: 1rem;
                 position: absolute;
-                right: 1rem;
+                right: 0;
                 top: 50%;
                 transform: translateY(-50%);
                 color: var(--green);
@@ -127,15 +129,16 @@ header {
                 display: none;
                 position: absolute;
                 top: 100%;
-                right: 0;
-                background: var(--main-bg);
-                border: 1px solid var(--blue);
+                left: -40%;
+                background: var(--main-bg-light);
                 padding: 0.5rem 0;
                 color: var(--main-color);
+                min-width: 200px;
 
                 li {
                     padding: 0.5rem 2rem;
                     cursor: pointer;
+                    text-align: left;
 
                     &:hover {
                         background: var(--white);
