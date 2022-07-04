@@ -9,6 +9,7 @@
     <BannerOne/>
     <BannerTwo/>
     <EventsSection/>
+    <TestimonialsSection/>
     <TheFooter />
   </div>
 </template>
@@ -24,6 +25,7 @@ import CoursesContainer from './components/CoursesContainer.vue';
 import BannerOne from './components/BannerOne.vue';
 import BannerTwo from './components/BannerTwo.vue';
 import EventsSection from './components/EventsSection.vue';
+import TestimonialsSection from './components/TestimonialsSection.vue';
 
 export default {
   name: 'App',
@@ -37,7 +39,8 @@ export default {
     CoursesContainer,
     BannerOne,
     BannerTwo,
-    EventsSection
+    EventsSection,
+    TestimonialsSection
 }
 }
 </script>
@@ -60,6 +63,7 @@ export default {
   --jungle-green: #22ad96;
   --dark-green: #458d76;
   --orange: #f29518;
+  --tortora: #a08778;
 }
 
 #app {
@@ -107,6 +111,10 @@ button{
   &:hover{
     background: var(--main-color);
   }
+}
+
+.primary-btn.large{
+  padding: 0.7rem 3.5rem;
 }
 
 .primary-btn.small{

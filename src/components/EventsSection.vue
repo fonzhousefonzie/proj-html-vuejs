@@ -67,7 +67,7 @@ export default {
 
 <style scoped lang="scss">
 .section {
-    background: var(--main-bg);
+    background: var(--main-bg-light);
 
     .background {
         background: var(--white);

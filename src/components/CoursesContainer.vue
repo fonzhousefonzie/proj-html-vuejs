@@ -15,7 +15,7 @@
                 :students-num="card.studentsNum"
                 />
             </div>
-            <button class="primary-btn mt-5">View all courses <i class="fa fa-solid fa-arrow-right"></i></button>
+            <button class="primary-btn large mt-5">View all courses <i class="fa fa-solid fa-arrow-right"></i></button>
         </div>
     </div>
 </template>
