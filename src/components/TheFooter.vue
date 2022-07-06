@@ -8,10 +8,10 @@
                     <li>+1(305) 547-9909 (9am - 5pm EST, Monday - Friday)</li>
                     <li>support@maxcoach.com</li>
                     <div class="social d-flex gap-3">
-                        <i class="fa fa-brands fa-facebook-square"></i>
-                        <i class="fa fa-brands fa-twitter"></i>
-                        <i class="fa fa-brands fa-instagram"></i>
-                        <i class="fa fa-brands fa-linkedin"></i>
+                        <a href="#"><i class="fa fa-brands fa-facebook-square"></i></a>
+                        <a href="#"><i class="fa fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-brands fa-linkedin"></i></a>
                     </div>
                 </ul>
             </div>
@@ -74,7 +74,10 @@ h6{
     i{
         padding: 1rem 1rem 0 0;
         font-size: 1.5rem;
-        color: var(--green);
+        color: var(--jungle-green);
+        &:hover{
+            color: var(--main-color);
+        }
     }
 
     .links{

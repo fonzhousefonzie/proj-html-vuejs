@@ -3,7 +3,7 @@
         <div class="container pt-5">
             <TitleAndSubtitle :subtitle="'people are praising maxcoach'" :title="'What make they'"
                 :title-last-word="'love us?'" />
-            <div class="cards-container" id="cards">
+            <div class="cards-container" ref="cards">
                 <TestimonialCard v-for="testimonial in testimonials" :key="testimonial.name" :img-url="testimonial.img"
                     :text="testimonial.text" :testimonial-name="testimonial.name" :job="testimonial.job" />
             </div>
@@ -61,7 +61,7 @@ export default {
             const th = this;
             setInterval(function () {
                 //cards
-                const cards = document.getElementById('cards');
+                const cards = th.$refs.cards;
                 cards.scrollBy({
                     left: 10000,
                     behavior: 'smooth'
