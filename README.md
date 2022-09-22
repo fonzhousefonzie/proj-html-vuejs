@@ -1,24 +1,4 @@
 # proj-html-vuejs
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Simple MaxCoach template clone with js slider and dropdowns, made for Boolean Careers.
+<hr>
+<img src="https://user-images.githubusercontent.com/100787980/191841090-9316b628-3e54-4b3f-898c-9aae1ff4dece.png">
